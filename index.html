@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricardo Borges – Développeur Web</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Ricardo Borges</h1>
+    <p class="tagline" data-lang="fr">Développeur Web en reconversion</p>
+    <p class="tagline" data-lang="pt">Desenvolvedor Web em transição de carreira</p>
+    <p class="tagline" data-lang="en">Web Developer in career transition</p>
+
+    <div class="language-switch">
+      <button onclick="changeLang('pt')">🇧🇷</button>
+      <button onclick="changeLang('fr')" class="active">🇫🇷</button>
+      <button onclick="changeLang('en')">🇬🇧</button>
+    </div>
+
+    <p><i class="fas fa-map-marker-alt"></i> Valence, France</p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:rico3036@gmail.com">rico3036@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> 07 81 58 31 01</p>
+  </header>
+
+  <main>
+    <section class="section" data-lang="fr">
+      <h2><i class="fas fa-user"></i> À propos de moi</h2>
+      <p>Actuellement en reconversion professionnelle dans le domaine du développement web. Curieux, autonome et passionné par la technologie, je suis inscrit à une formation de développeur web full stack (2025–2026).</p>
+    </section>
+
+    <section class="section" data-lang="pt">
+      <h2><i class="fas fa-user"></i> Sobre mim</h2>
+      <p>Atualmente em transição de carreira para a área de desenvolvimento web. Curioso, autodidata e apaixonado por tecnologia, estou matriculado em uma formação de desenvolvedor full stack (2025–2026).</p>
+    </section>
+
+    <section class="section" data-lang="en">
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>Currently transitioning into the web development field. Curious, self-taught and passionate about technology, I am enrolled in a full stack training program (2025–2026).</p>
+    </section>
+
+    <section class="section" data-lang="all">
+      <h2><i class="fas fa-code"></i> Stack & Outils</h2>
+      <p>
+        <i class="fab fa-html5"></i> HTML5 &nbsp;
+        <i class="fab fa-css3-alt"></i> CSS3 &nbsp;
+        <i class="fab fa-js"></i> JavaScript &nbsp;
+        <i class="fab fa-git-alt"></i> Git &nbsp;
+        <i class="fab fa-github"></i> GitHub &nbsp;
+        <i class="fab fa-figma"></i> Figma
+      </p>
+    </section>
+
+    <section class="section" data-lang="all">
+      <h2><i class="fas fa-rocket"></i> Projetos / Projects</h2>
+      <p><strong>/Rikoborges/bio-rico</strong> – Site vitrine HTML/CSS com design responsivo. <a href="https://github.com/Rikoborges/bio-rico">Ver no GitHub</a></p>
+    </section>
+
+    <section class="section" data-lang="all">
+      <h2><i class="fas fa-lightbulb"></i> Mentalidade Dev</h2>
+      <p data-lang="fr">Apprendre est un processus continu. Chaque bug est une opportunité de progresser. Mon code n'est peut-être pas parfait, mais ma motivation est sans limite.</p>
+      <p data-lang="pt">Aprender é um processo contínuo. Cada bug é uma oportunidade de crescer. Meu código pode não ser perfeito, mas minha motivação é ilimitada.</p>
+      <p data-lang="en">Learning is a continuous process. Every bug is a chance to grow. My code may not be perfect, but my motivation has no limits.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="btn-contact" href="mailto:rico3036@gmail.com">💌 Fale comigo – estou pronto para contribuir!</a>
+    <p>&copy; 2025 Ricardo Borges</p>
+  </footer>
+
+  <script>
+    function changeLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const langAttr = el.getAttribute('data-lang');
+        el.style.display = (langAttr === lang || langAttr === 'all') ? 'block' : 'none';
+      });
+      document.querySelectorAll('.language-switch button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.includes(lang.toUpperCase())) btn.classList.add('active');
+      });
+    }
+    window.onload = () => changeLang('fr');
+  </script>
+</body>
+</html>
